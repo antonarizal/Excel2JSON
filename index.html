@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/css/beautify-json.css">
+<style>
+ul {
+  list-style-type: none;
+}
+</style>
+<script src="/js/beautify-json.js"></script>
+<script>
+
+</script>
+</head>
+<body>
+    
+<div class="col-md-12">
+    <div class="box box-solid">
+        <div class="box-header">
+            <h3 class="box-title"> Import Data (.xlsx)</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <p><input type="file" name="xlfile" id="xlf" /> </p>
+            <div style="display:block">
+                Output : <select name="format">
+                    <option value="json"> JSON</option>
+                    <option value="csv"> CSV</option>
+                    <option value="form"> FORMULAE</option>
+                </select><br />
+                <div id="drop"></div>
+                <input type="button" id="dotext" value="Click here to process the base64 text" onclick="b64it();" />
+                Advanced Demo Options: <br />
+                Use Web Workers: (when available) <input type="checkbox" name="useworker" checked><br />
+                Use Transferrables: (when available) <input type="checkbox" name="xferable" checked><br />
+                Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" checked><br />
+            </div>
+            
+            <p>
+                <div id="out" class="two">{"data":null}</div>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+var base_url = 'http://localhost/';
+$("#reset").click(function() {
+    $("#import").val("");
+    $("#sukses").html("");
+});
+
+</script>
+
+<!-- uncomment the next line here and in xlsxworker.js for encoding support -->
+<!--<script src="dist/cpexcel.js"></script>-->
+<script src="/js/js-xlsx/shim.js"></script>
+<script src="/js/js-xlsx/jszip.js"></script>
+<script src="/js/js-xlsx/xlsx.js"></script>
+<!-- uncomment the next line here and in xlsxworker.js for ODS support -->
+<script src="/js/js-xlsx/dist/ods.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+</html>
